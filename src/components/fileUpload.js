@@ -85,8 +85,10 @@ const FileUploadZone = () => {
 			formData.append('file', acceptedFiles[0]);
 			setLoaderState(true);
 			try {
+				// http://detect-my-strain.herokuapp.com/crop
+				// http://localhost:5000/crop
 				const fileUploadRes = await axios
-					.post('http://localhost:5000/crop', formData, {
+					.post('http://detect-my-strain.herokuapp.com/crop', formData, {
 						headers: {
 							'Content-Type': 'multipart/form-data',
 						},
