@@ -4,7 +4,7 @@ import logo from '../assets/eye.svg';
 
 const StyledNav = styled.nav`
 	width: 100vw;
-	height: 100px;
+	height: 80px;
 	position: fixed;
 	top: 0;
 	padding: 0 10vw;
@@ -53,9 +53,9 @@ const StyledLink = styled.a`
 const Nav = () => {
 	return (
 		<StyledNav>
-			<StyledLogo href="#">
+			<StyledLogo href="/">
 				<img src={logo} alt="Deep Detect" />
-				<span>Deep Detect</span>
+				<span>iStrain</span>
 			</StyledLogo>
 			<StyledLinksContainer>
 				<StyledLink href="#about">About</StyledLink>
