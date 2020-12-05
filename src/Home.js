@@ -1,18 +1,16 @@
 import React from 'react';
-import './App.css';
+import './Home.css';
 import Header from './components/header';
-import Nav from './components/nav';
 
-function App() {
+function Home() {
 	return (
 		<>
 			<div id="popupContainer"></div>
-			<div className="App">
-				<Nav />
+			<div className="Home">
 				<Header />
 			</div>
 		</>
 	);
 }
 
-export default App;
+export default Home;
