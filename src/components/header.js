@@ -1,17 +1,15 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 // import FileUploadZone from './fileUpload';
 // import { Popup, useOnClickOutside } from './popup';
 import RecordRTC from 'recordrtc';
 import axios from 'axios';
 import Webcam from 'react-webcam';
-import { ReactComponent as EyeCheckIcon } from '../assets/eye.svg';
 const StyledHeader = styled.header`
 	width: 100%;
 	height: 100vh;
 	/* background: linear-gradient(90deg, #0575e6, #1435b3); */
-	background-color: #1a1a2e;
-	/* background-color: #212121; */
+	background-color: #1f2933;
 	/* clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%); */
 	display: flex;
 	flex-direction: column;
@@ -21,7 +19,7 @@ const StyledHeader = styled.header`
 const StyledHeading = styled.h1`
 	margin: 0;
 	padding: 0;
-	font-size: 4rem;
+	font-size: 4.8rem;
 	margin-bottom: 24px;
 	color: #fff;
 `;
@@ -32,6 +30,29 @@ const StyledSubHeading = styled.h2`
 	font-weight: 500;
 	color: #fff;
 	margin-bottom: 40px;
+`;
+const StyledButton = styled.a`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 48px;
+	background-color: #1992d4;
+	color: #fff;
+	font-family: 'Inter';
+	border-radius: 5px;
+	text-decoration: none;
+	margin-top: 24px;
+	flex-direction: column;
+	font-size: 2rem;
+	font-weight: 500;
+
+	span:last-child {
+		display: inline-block;
+		margin-top: 8px;
+		font-size: 1.4rem;
+		font-weight: 400;
+		color: #b6e0fe;
+	}
 `;
 
 function createUUID() {
@@ -69,22 +90,21 @@ const Header = () => {
 
 	const capture = React.useCallback(() => {
 		const imageSrc = webcamRef.current.getScreenshot();
-		// console.log(imageSrc);
 		const file = dataURLtoFile(imageSrc, `${createUUID()}.jpeg`);
 		const data = new FormData();
 		data.append('file', file, file.name);
-		console.log(file);
 
 		try {
 			const fileUpload = axios
-				.post('http://localhost:5000/testmodel', data, {
+				.post('http://localhost:5000/predict', data, {
 					headers: {
 						'Content-Type': 'multipart/form-data',
 					},
-					responseType: 'arraybuffer',
+					// the following response type is only when program has to receive byte-coded assets like images
+					// responseType: 'arraybuffer',
 				})
 				.then((res) => {
-					console.log(res);
+					console.log(res.data);
 					// let image = btoa(
 					// 	new Uint8Array(res.data).reduce(
 					// 		(data, byte) => data + String.fromCharCode(byte),
@@ -104,14 +124,17 @@ const Header = () => {
 
 	return (
 		<StyledHeader>
-			<EyeCheckIcon />
-			<StyledHeading>iStrain</StyledHeading>
+			<StyledHeading>Check well being of your eyes</StyledHeading>
 			<StyledSubHeading>
 				Take a self-assessment of your eyes and scan for any symptoms of
-				eye strain within 90 seconds
+				eye strain within 120 seconds
 			</StyledSubHeading>
+			<StyledButton href="/test">
+				<span>Take a General Test</span>
+				<span>It takes 2 minutes</span>
+			</StyledButton>
 			{/* <FileUploadZone /> */}
-			<Webcam
+			{/* <Webcam
 				audio={false}
 				height={720}
 				ref={webcamRef}
@@ -119,8 +142,7 @@ const Header = () => {
 				width={720}
 				videoConstraints={videoConstraints}
 			/>
-			<button onClick={capture}>Capture photo</button>
-			<img src={img} alt="" />
+			<button onClick={capture}>Capture photo</button> */}
 		</StyledHeader>
 	);
 };
