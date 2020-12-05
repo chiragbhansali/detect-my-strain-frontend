@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import Home from './Home';
+import CheckUp from './CheckUp';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Nav from './components/nav';
@@ -12,6 +13,7 @@ ReactDOM.render(
 			<Nav />
 			<Switch>
 				<Route path="/" component={Home} exact />
+				<Route path="/test" component={CheckUp} />
 			</Switch>
 		</BrowserRouter>
 	</React.StrictMode>,
