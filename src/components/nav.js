@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../logo.svg';
+import logo from '../assets/eye.svg';
 
 const StyledNav = styled.nav`
 	width: 100vw;
@@ -19,13 +19,15 @@ const StyledNav = styled.nav`
 const StyledLogo = styled.a`
 	color: #ffffff;
 	text-decoration: none;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	font-weight: 700;
 	display: flex;
 	align-items: center;
 
 	img {
 		margin-right: 10px;
+		width: 50px;
+		height: 50px;
 	}
 
 	&:visited,
