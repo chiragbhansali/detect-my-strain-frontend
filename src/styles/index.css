@@ -29,6 +29,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-width: 100vw;
   max-width: 100%;
+	background-color: #1f2933;
 }
 
 code {
