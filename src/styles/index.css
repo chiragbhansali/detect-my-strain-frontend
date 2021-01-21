@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary: #0779E4
+  --primary: #0779E4;
+  --bg: #1f2933;
 }
 
 *,
@@ -29,7 +30,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-width: 100vw;
   max-width: 100%;
-	background-color: #1f2933;
+	background-color: var(--bg);
 }
 
 code {
