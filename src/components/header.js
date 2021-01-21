@@ -45,6 +45,12 @@ const StyledButton = styled.a`
 	flex-direction: column;
 	font-size: 2rem;
 	font-weight: 500;
+	transition: 0.2s ease-in;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #127fbf;
+	}
 
 	span:last-child {
 		display: inline-block;
