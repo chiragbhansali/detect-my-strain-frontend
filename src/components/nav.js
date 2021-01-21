@@ -59,7 +59,12 @@ const Nav = () => {
 			</StyledLogo>
 			<StyledLinksContainer>
 				<StyledLink href="#about">About</StyledLink>
-				<StyledLink href="#app">Download App</StyledLink>
+				<StyledLink
+					href="http://localhost:3000/app-release.apk"
+					target="_blank"
+				>
+					Download App
+				</StyledLink>
 			</StyledLinksContainer>
 		</StyledNav>
 	);
