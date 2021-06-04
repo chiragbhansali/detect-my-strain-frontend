@@ -58,7 +58,7 @@ const Nav = () => {
 				<span>iStrain</span>
 			</StyledLogo>
 			<StyledLinksContainer>
-				<StyledLink href="#about">About</StyledLink>
+				{/* <StyledLink href="#about">About</StyledLink> */}
 				<StyledLink
 					href="http://localhost:3000/app-release.apk"
 					target="_blank"
