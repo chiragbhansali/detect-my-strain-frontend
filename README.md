@@ -1,3 +1,7 @@
+# Detect My Strain
+
+Deep learning-based algorithm that can predict asthenopia (also known as a eye strain)
+
 # Screenshots:
 
 ![image](https://user-images.githubusercontent.com/22539632/166111209-b9599ed3-5792-44ef-bf73-eba0c1207207.png)
